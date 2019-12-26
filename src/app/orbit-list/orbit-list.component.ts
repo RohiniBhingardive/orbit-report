@@ -8,16 +8,33 @@ import { Satellite } from '../satellite';
 })
 export class OrbitListComponent implements OnInit {
 
+  isRowEven = true;
   @Input() satellites: Satellite[];
 
-   pravin: string;
-
   constructor() { 
-    this.pravin="Test";
+    
   }
 
   ngOnInit() {
   }
+
+  sort(column: string): void {
+    // array.sort modifies the array, sorting the items based on the given compare function
+    this.satellites.sort(function(a: Satellite, b: Satellite): number {
+       if(a[column] < b[column]) {
+          return -1;
+       } else if (a[column] > b[column]) {
+          return 1;
+       }
+       return 0;
+    });
+ }
+
+ getRowEvenOdd()
+ {
+   this.isRowEven = !this.isRowEven;
+   return this.isRowEven;
+ }
 
   
 
