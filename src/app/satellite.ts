@@ -25,4 +25,18 @@ export class Satellite {
             return false;
         }
     }
+
+    isSatelliteType(type: string)
+    {
+        if(this.type.toLocaleLowerCase() == type.toLocaleLowerCase())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    
 }
