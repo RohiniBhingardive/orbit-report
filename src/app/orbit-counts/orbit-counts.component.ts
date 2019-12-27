@@ -9,7 +9,7 @@ import { Satellite } from '../satellite';
 export class OrbitCountsComponent implements OnInit {
 
   @Input() satellites: Satellite[];
-  uniqueTypesArray: [string];
+  //uniqueTypesArray: [string];
 
   constructor() 
   {
@@ -18,6 +18,17 @@ export class OrbitCountsComponent implements OnInit {
 
   ngOnInit() {
     
+    /*
+    for(let i=0; i<this.satellites.length; i++)
+    {
+      if(!this.uniqueTypesArray.includes(this.satellites[i].type.toLowerCase()))
+      {
+        this.uniqueTypesArray.push(this.satellites[i].type);
+      }
+    }
+    */
+    
+
   }
 
   getTypeCount(type: string)
